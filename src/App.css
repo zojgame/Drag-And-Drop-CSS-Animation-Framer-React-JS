@@ -1,0 +1,318 @@
+.App {
+  text-align: center;
+  background-color: #7e828a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 8vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  width: 100%;
+  margin-bottom: 2%;
+  padding-left: 2%;
+}
+/* #region burger-menu-btn */
+.burger-menu{
+  width: 2.5vw;
+  height: 2.5vw;
+  border-right: white solid 1px;
+}
+
+.burger-menu:hover{
+  cursor: pointer;
+}
+
+.burger-menu > div:first-child::after{
+  content: '';
+  top: 5%;
+  right: 97.2%;
+  left: 1.2%;
+  position: absolute;
+  border: 0.5px white solid;
+}
+
+.burger-menu > div:first-child:before{
+  content: '';
+  top: 4.2%;
+  right: 97.2%;
+  left: 1.2%;
+  position: absolute;
+  border: 0.5px white solid;
+}
+
+.burger-menu::before{
+  content: '';
+  top: 3.4%;
+  right: 97.2%;
+  left: 1.2%;
+  position: absolute;
+  border: 0.5px white solid;
+  
+}
+
+.burger-menu-start-animation::before,
+.burger-menu-start-animation::after
+{
+  animation: burger-start-menu 0.3s forwards;
+}
+
+.burger-menu-second-animation::before,
+.burger-menu-second-animation::after
+{
+  animation: burger-second-menu 0.3s forwards;
+}
+
+@keyframes burger-second-menu{
+  from{
+    right: 98%;
+    left: 2%;
+    transform: rotate(90deg); 
+    opacity: 0;   
+    
+  }
+  to{
+    transform: rotate(0deg);
+    right: 97.2%;
+    left: 1.2%;
+    opacity: 1;  
+  }
+}
+
+@keyframes burger-start-menu{
+  from{
+    transform: rotate(0deg);
+    right: 97.2%;
+    left: 1.2%;
+    opacity: 1;
+    background-color: white;
+  }
+  to{
+    right: 98%;
+    left: 2%;
+    transform: rotate(90deg); 
+    opacity: 0;   
+  }
+}
+
+/* #endregion  */
+
+
+/* #region popup-burger-menu */
+.popup-burger-menu > ul{
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content:start;
+}
+
+.popup-burger-menu > ul{
+  margin: 0;
+  padding: 0;
+}
+
+.popup-burger-menu > ul > li{
+  padding: 2% 5%;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.popup-burger-menu{
+  background: white;
+  position: absolute;
+  width: 15vw;
+  height: 40vh;
+  left: 2%;
+  top: 8vh;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  justify-content:start;
+  border-radius: 5%;
+  animation: popup-burger-menu-anim 1s forwards;
+}
+
+.popup-burger-menu-hidden{
+  display: none;
+  visibility: none;
+}
+
+@keyframes popup-burger-menu-anim{
+  from{
+    opacity: 0;
+    top: 20vh;
+  }
+  to{
+    opacity: 1;
+    top: 9vh;
+  }
+}
+
+/* #endregion popup-burger-menu */
+
+.App-link {
+  color: #61dafb;
+}
+
+.home{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 200px;
+  top: 200px;
+}
+
+.square-item::before, .square-item::after{
+  content: '';
+  position: absolute;
+  border: 0.5px white solid;
+}
+
+.square1::before{
+    top: 45px;
+    bottom: 10px;
+    left: 10px;   
+    animation: roof1 2s forwards; 
+}
+
+.square1::after{
+    top: 45px;
+    bottom: 10px;
+    left: 15px;  
+    animation: roof2 2s forwards;  
+}
+
+
+.square2::before{
+  top: 45px;
+  bottom: 10px;
+  left: 20px;    
+  animation: ceiling 2s forwards;
+}
+
+.square2::after{
+  top: 45px;
+  bottom: 10px;
+  left: 25px;   
+  animation: floor 2s forwards; 
+}
+
+.square3::after{
+  top: 45px;
+  bottom: 10px;
+  left: 30px; 
+  animation: wall1 2s forwards; 
+}
+
+
+.square3::before{
+  top: 45px;
+  bottom: 10px;
+  left: 35px;  
+  animation: wall2 2s forwards;
+}
+
+@keyframes roof1{
+  from{
+    top: 45px;
+    bottom: 10px;
+    left: 10px;
+  }
+  to{
+    top: 0px;
+    bottom: 40px;
+    left: 10px; 
+    transform: rotate(45deg); 
+  }
+}
+
+@keyframes roof2{
+  from{
+    top: 45px;
+    bottom: 10px;
+    left: 15px;  
+  }
+  to{
+    top: 0px;
+  bottom: 40px;
+  left: 37px; 
+  transform: rotate(-45deg);  
+  }
+}
+
+@keyframes ceiling{
+  from{
+    top: 45px;
+  bottom: 10px;
+  left: 20px;  
+  }
+  to{
+    bottom: 20px;
+  left: 23.5px;
+  top: 10px;
+  transform: rotate(90deg);
+  }
+}
+
+@keyframes floor{
+  from{
+    top: 45px;
+  bottom: 10px;
+  left: 25px;   
+  }
+  to{
+    top: 48px;
+  bottom: -22px;
+  left: 23.5px;
+  transform: rotate(90deg);
+  }
+}
+
+@keyframes wall1{
+  from{
+    top: 45px;
+  bottom: 10px;
+  left: 30px;    
+  }
+  to{
+    top: 35px;
+  bottom: 5px;
+  left: -4px;
+  /* transform: rotate(90deg); */
+  }
+}
+
+@keyframes wall2{
+  from{
+    top: 45px;
+  bottom: 10px;
+  left: 35px;    
+  }
+  to{
+    top: 35px;
+  bottom: 5px;
+  left: 50px;
+  }
+}
+
+
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
