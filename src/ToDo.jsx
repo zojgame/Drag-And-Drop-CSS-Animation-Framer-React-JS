@@ -4,12 +4,11 @@ import {nanoid} from 'nanoid';
 import { useContext } from "react";
 import React from "react";
 import TextField from '@mui/material/TextField';
-// import {DeleteIcon} from '@mui/icons-material/Delete';
+import DeleteIcon from '@mui/icons-material/Delete';
 import './App.css';
 
 
 const columnStyle = {
-    // border: '2px solid black's
 }
 
 const listStyle = {
@@ -39,6 +38,9 @@ const ItemContext = React.createContext([], null)
 
 function ToDoDragAndDropComponent(){
     const [items, setItems] = useState(defaultItem);
+    const deleteTask = (taskId) => {
+        setItems(items.filter((item) => item.id !== taskId));
+    }
 
     return (
         <ItemContext.Provider value={{items, setItems}}>
@@ -56,9 +58,13 @@ function ToDoDragAndDropComponent(){
                         value={item} 
                         key={item.id} 
                         style={itemStyle}
+                        className="task-item"
                         >
                                 {item.textValue}
-                            {/* <DeleteIcon/>    */}
+                            <DeleteIcon 
+                            className="delete-btn" 
+                            fontSize="medium" 
+                            onClick={() => deleteTask(item.id)}/>   
                         </Reorder.Item>
                 )) }
                 </div>

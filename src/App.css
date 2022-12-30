@@ -368,3 +368,12 @@
     transform: rotate(360deg);
   }
 }
+
+.delete-btn{
+  vertical-align: middle;
+}
+
+.task-item{
+  display: grid;
+  grid-template-columns: 80% 20%;
+}
