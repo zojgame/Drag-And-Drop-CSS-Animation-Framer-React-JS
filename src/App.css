@@ -306,13 +306,65 @@
   }
 }
 
+.add-task-plus-btn1{
+  transform: translateY(50%);
+}
 
+.stick-flip1{
+  animation: flip-anim1 1s forwards ;
+}
 
-@keyframes App-logo-spin {
-  from {
+@keyframes flip-anim1{
+  from{
+    transform: translateY(50%) rotate(0);
+  }
+  to{
+    transform: translateY(50%) rotate(180deg);
+  }
+}
+
+.add-task-plus-btn1::before{
+  content: '';
+  border: 0.5px solid white;
+  position: relative;
+}
+
+.add-task-plus-btn2{
+  transform: translateY(-50%) rotate(90deg);
+}
+
+.stick-flip2{
+  animation: flip-anim2 1s forwards ;
+}
+
+@keyframes flip-anim2{
+  from{
+    transform: translateY(-50%) rotate(90deg);
+  }
+  to{
+    transform: translateY(-50%) rotate(-90deg);
+  }
+}
+
+.add-task-plus-btn2::after{
+  content: '';
+  border: 0.5px solid white;
+  position: relative;  
+}
+
+.add-task-btn-container:hover{
+  cursor: pointer;
+}
+
+.plus-flip-anim{
+  animation: flip-anim 1s forwards ;
+}
+
+@keyframes flip-anim{
+  from{
     transform: rotate(0deg);
   }
-  to {
+  to{
     transform: rotate(360deg);
   }
 }
