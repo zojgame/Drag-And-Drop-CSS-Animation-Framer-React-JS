@@ -26,7 +26,7 @@ function Header(){
                 <ul>
                     <li onClick={() => hadleNavigateClick('/')}>Главная</li>
                     <li onClick={() => hadleNavigateClick('/to-do')}>To do list</li>
-                    <li>Анимация Frame Motion</li>
+                    <li onClick={() => hadleNavigateClick('/framer-animation')}>Анимация Frame motion</li>
                     <li onClick={() => hadleNavigateClick('/css')}>Анимация CSS</li>
                 </ul>
             </div>
